@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=VT323&family=Yuji+Mai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows&family=Ojuju&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Pirata One", system-ui; */
+    font-family: "Ojuju", sans-serif;
+    font-weight: 800;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+.container {
+    background-image: linear-gradient(to left, #882c8e, #506291);
+    /* height: 100%;
+    width: 100%; */
+    /* max-width: 1180PX; */
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 40px;
+
+    /* padding: 0 100px 0 100px;
+    margin: 0 100px 0 100px; */
+
+}
+
+.spaceSide {
+    max-width: 1180PX;
+    margin-inline: auto;
+    padding-inline: 40px;
+}
+
+.container h1 {
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+#scoreBoard {
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    margin-inline: 25%;
+    padding: 5px 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(46, 43, 43);
+    background-image: linear-gradient(to right, #882c8e, #506291);
+
+}
+
+#scoreBoard h2 {
+    width: 10%;
+}
+
+#board {
+    /* gap: 10px; */
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid rgb(181, 112, 112);
+    /* height: 50%; */
+}
+
+#board div {
+    padding: 15px 10px 0 10px;
+}
+
+
+.select {
+    justify-content: center;
+}
+
+.icon {
+    height: 80px;
+    width: 80px;
+    margin: 15px;
+    border-radius: 50%;
+    border: 2px solid rgb(184, 111, 111);
+}
+
+.select .Rock {
+    background-image: url(./assets/ROCK_ICON.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.Paper {
+    background-image: url(./assets/PAPER_ICONS.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.Scissor {
+    background-image: url(./assets/SCISSOR_ICON.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.icon:hover {
+    box-shadow: 5px 5px 10px rgb(46, 43, 43);
+    transform: scale(1.1);
+}
+
+
+
+#showResult {
+    font-family: "Edu AU VIC WA NT Arrows", cursive;
+    justify-content: space-between;
+    height: 75px;
+    width: 50%;
+    /* border: 1px solid black; */
+    margin-inline: 25%;
+    padding: 5px 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(46, 43, 43);
+    text-align: center;
+    background-image: linear-gradient(to bottom right, #882c8e, #506291);
+    /* padding-top: 0px; */
+}
+
+
+.big-pictures {
+    justify-content: space-around;
+    width: 100%;
+    height: 180px;
+    /* position: relative; */
+    /* border: 1px solid black; */
+    margin-top: 10px;
+    padding-inline: 150px;
+}
+
+
+
+.right_Hand {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: right center;
+    /* Fix right part of left hand */
+    background-image: url(./assets/LRock.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    /* border: 1px solid rgb(10, 250, 54); */
+    /* margin:  10px 0 10px; */
+    box-sizing: border-box;
+}
+
+.left_Hand {
+    /* padding-left: 100px; */
+    width: 100%;
+    height: 100%;
+    transform-origin: left center;
+    background-image: url(./assets/Rrock.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    /* border: 1px solid rgb(248, 0, 0); */
+    box-sizing: border-box;
+}
+
+.animate-left {
+    animation: left-hand-move 0.2s ease-in-out 0s infinite;
+}
+
+.animate-right {
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: right-hand-move 0.2s ease-in-out 0s infinite;
+}
+
+/* Keyframes for left hand */
+@keyframes left-hand-move {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    40% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: rotate(10deg);
+    }
+}
+
+/* Keyframes for right hand */
+@keyframes right-hand-move {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    40% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(-10deg);
+    }
+}
+
+@media screen and (max-width: 479px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    #scoreBoard {
+        flex-direction: column;
+        margin-inline: 0%;
+        row-gap: 15px;
+        width: 100%;
+    }
+
+    #scoreBoard h2 {
+        width: 110%;
+    }
+
+    .big-pictures {
+        /* justify-content: space-around; */
+        flex-direction: column;
+        width: 100%;
+        height: 280px;
+        /* position: relative; */
+        /* border: 1px solid black; */
+        margin-block: 20px;
+        padding: 0px;
+    }
+
+    .left_Hand {
+        /* padding-left: 100px; */
+        width: 80vw;
+        height: 50%;
+        box-sizing: border-box;
+        background-size: contain;
+    }
+
+    .right_Hand {
+        padding: 0;
+        width: 80vw;
+        height: 50%;
+        background-size: contain;
+    }
+    .select {
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .select h1 {
+        display: none;
+    }
+
+    .icon {
+        border-radius: 20%;
+        padding: 0;
+        height: 100px;
+        width: 100px;
+        margin: 5px;
+        border: none;
+        /* justify-content: center; */
+    }
+    .icon:hover{
+        box-shadow: none;
+    }
+
+    #showResult {
+        /* justify-content: center; */
+        height: 100px;
+        width: 100%;
+        /* border: 1px solid black; */
+        margin-inline: 0%;
+        padding: 5px 4px;
+        border-radius: 10px;
+    }
+
+}
