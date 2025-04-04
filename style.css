@@ -1,28 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=VT323&family=Yuji+Mai&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows&family=Ojuju&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
-*{
+/* @import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=VT323&family=Yuji+Mai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Arrows&family=Ojuju&family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: "Pirata One", system-ui; */
-    font-family: "Ojuju", sans-serif;
-    font-weight: 800;
+    font-family: "Winky Sans", sans-serif;
+    /* font-family: "Ojuju", sans-serif; */
+    /* font-weight: 800; */
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     width: 100%;
+
 }
 
 .container {
     background-image: linear-gradient(to left, #882c8e, #506291);
-    /* height: 100%;
+    /* height: 100vh;
     width: 100%; */
     /* max-width: 1180PX; */
     width: 100%;
     margin-inline: auto;
     padding-inline: 40px;
-
+    position: relative;
+    padding-bottom: 20px;
     /* padding: 0 100px 0 100px;
     margin: 0 100px 0 100px; */
 
@@ -38,6 +43,9 @@ body {
     padding-top: 10px;
     text-align: center;
     margin-bottom: 30px;
+    font-weight: bolder;
+    font-size: 3.5rem;
+    color: rgb(232, 253, 0);
 }
 
 .flex {
@@ -64,7 +72,7 @@ body {
     /* gap: 10px; */
     text-align: center;
     border-radius: 20px;
-    border: 2px solid rgb(181, 112, 112);
+    border: 4px solid rgb(181, 112, 112);
     /* height: 50%; */
 }
 
@@ -103,25 +111,37 @@ body {
     background-repeat: no-repeat;
 }
 
-.icon:hover {
+.icon:active {
     box-shadow: 5px 5px 10px rgb(46, 43, 43);
-    transform: scale(1.1);
+    transform: scale(0.9);
 }
 
 
 
 #showResult {
-    font-family: "Edu AU VIC WA NT Arrows", cursive;
+    /* font-family: "Edu AU VIC WA NT Arrows", cursive; */
+    font-family: "Winky Sans", sans-serif;
     justify-content: space-between;
-    height: 75px;
-    width: 50%;
+    height: 100px;
+    width: fit-content;
+    /* width: 40%; */
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    z-index: 20;
+    transform: translate(-50%, -50%);
+
+    opacity: 0;
+    /* right: 15%; */
     /* border: 1px solid black; */
-    margin-inline: 25%;
+    /* margin-inline: 25%; */
     padding: 5px 20px;
     border-radius: 20px;
-    box-shadow: 5px 5px 10px rgb(46, 43, 43);
+    box-shadow: 5px 5px 900px rgb(46, 43, 43);
     text-align: center;
-    background-image: linear-gradient(to bottom right, #882c8e, #506291);
+    /* background-image: linear-gradient(to bottom right, #882c8e, #506291); */
+    background: transparent;
+    backdrop-filter: blur(5px);
     /* padding-top: 0px; */
 }
 
@@ -207,17 +227,21 @@ body {
     }
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 600px) {
     body {
         height: 100vh;
         width: 100vw;
+    }
+    #heading{
+        font-size: 2.0rem;
     }
 
     #scoreBoard {
         flex-direction: column;
         margin-inline: 0%;
-        row-gap: 15px;
+        gap: 20px;
         width: 100%;
+        text-align: center;
     }
 
     #scoreBoard h2 {
@@ -249,6 +273,7 @@ body {
         height: 50%;
         background-size: contain;
     }
+
     .select {
         justify-content: space-between;
         margin-bottom: 20px;
@@ -267,17 +292,19 @@ body {
         border: none;
         /* justify-content: center; */
     }
-    .icon:hover{
+
+    .icon:hover {
         box-shadow: none;
     }
 
     #showResult {
         /* justify-content: center; */
-        height: 100px;
-        width: 100%;
+        height: fit-content;
+        width: fit-content;
+        top: 65%;
         /* border: 1px solid black; */
         margin-inline: 0%;
-        padding: 5px 4px;
+        padding: 5px 15px;
         border-radius: 10px;
     }
 
