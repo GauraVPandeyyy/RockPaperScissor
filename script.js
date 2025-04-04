@@ -3,7 +3,7 @@
 // let paper = document.getElementById("paper");
 // let scissor = document.getElementById("scissor");
 let showResult = document.getElementById("showResult");
-
+let container = document.querySelector('.container')
 let playerScore = document.getElementById("player");
 let computerScore = document.getElementById("computer");
 
@@ -12,7 +12,7 @@ let compWon = 0;
 
 playerScore.innerHTML = `<p>PLAYER</p> <h1> ${userWon} </h1>`;
 computerScore.innerHTML = `<p>COMPUTER</p> <h1> ${compWon} </h1>`;
-function randomNum () {
+function randomNum() {
     const min = 1;
     const max = 3;
 
@@ -22,23 +22,33 @@ function randomNum () {
 // const paperNum = 2;
 // const scissorNum = 3;
 function printAns(winner, user) {
+
     if (winner == user) {
         // console.log(`${user} USER is winner`);
-        showResult.innerHTML = "<h1>Congratulations !!  YOU WON</h1>";
+        showResult.innerHTML = '<h1 style="color:rgb(3, 255, 49);">You Won</h1>';
+
+        // showResult.style.color = "green";
         userWon += 1;
         playerScore.innerHTML = `<p>PLAYER</p> <h1> ${userWon} </h1>`
     }
     else {
-        console.log(`${comp} COMPUTER is winner`);
-        showResult.innerHTML = "<h1>COMPUTER WON !!!</h1>";
+        console.log(`${comp} Computer Won`);
+        showResult.innerHTML = '<h1 style="color:rgb(255, 3, 3);">Computer Won</h1>';
+
         compWon += 1;
         computerScore.innerHTML = `<p>COMPUTER</p> <h1> ${compWon} </h1>`
     }
 }
 function checkCond(user, comp) {
+    showResult.style.opacity = '1';
+    // container.style.opacity = '0.2';
+    container.style.backdropFilter = 'blur(6px)';
+
+
     if (user == comp) {
         console.log(`Match DRAW`);
-        showResult.innerHTML = "<h1>MATCH DRAW!!!!!!!</h1>";
+        showResult.innerHTML = "<h1>MATCH DRAW</h1>";
+        showResult.color ="red";
     }
     else if (Math.abs(user - comp) == 1) {
         let winner = Math.max(user, comp);
@@ -88,8 +98,12 @@ function resetHands() {
     setTimeout(() => {
         leftHand.style.backgroundImage = "url('./assets/Rrock.png')";
         rightHand.style.backgroundImage = "url('./assets/LRock.png')";
-        showResult.innerHTML = "<h1>RESULTS !!</h1>";
-        
+        container.style.backdropFilter = 'none';
+        showResult.style.opacity = '0';
+        console.log('hi');
+        // container.style.opacity = '0.2';
+
+
     }, 2000);
 }
 
